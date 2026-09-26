@@ -1,6 +1,6 @@
 <?php
 /**
- * Plantilla de respaldo.
+ * Fallback template.
  *
  * @package s421
  */

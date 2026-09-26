@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer del tema.
+ * Theme footer.
  *
  * @package s421
  */

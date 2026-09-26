@@ -1,6 +1,6 @@
 <?php
 /**
- * Portada (one-page).
+ * Front page (one-page).
  *
  * @package s421
  */
