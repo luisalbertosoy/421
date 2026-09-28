@@ -43,19 +43,19 @@ body.loaded {
 /* ============ Fonts ============ */
 
 @font-face {
-    font-family: 'NHaasGrotesk';
-    src: url('../fonts/nhaasgrotesktxpro-55rg.woff2') format('woff2'),
-         url('../fonts/nhaasgrotesktxpro-55rg.woff') format('woff'),
-         url('../fonts/nhaasgrotesktxpro-55rg.ttf') format('truetype');
+    font-family: 'AvenueMonoReg';
+    src: url('../fonts/AvenueMono.woff2') format('woff2'),
+         url('../fonts/AvenueMono.woff') format('woff'),
+         url('../fonts/AvenueMono.ttf') format('truetype');
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'NHaasGroteskMd';
-    src: url('../fonts/NHaasGroteskTXPro-65Md.woff2') format('woff2'),
-         url('../fonts/NHaasGroteskTXPro-65Md.woff') format('woff'),
-         url('../fonts/NHaasGroteskTXPro-65Md.ttf') format('truetype');
+    font-family: 'AvenueMonoMed';
+    src: url('../fonts/avenuemono-medium.woff2') format('woff2'),
+         url('../fonts/avenuemono-medium.woff') format('woff'),
+         url('../fonts/avenuemono-medium.ttf') format('truetype');
     font-style: normal;
     font-display: swap;
 }
@@ -75,7 +75,7 @@ html {
 }
 
 body {
-    font-family: 'Geist', sans-serif;
+    font-family: 'AvenueMonoReg', sans-serif;
     color: black;
     background-color: white;
     font-size: 1rem;
@@ -247,8 +247,8 @@ embla {
 }
 
 .text-medium {
-    font-family: 'NHaasGroteskMd', sans-serif;
-    font-weight: 500;
+    font-family: 'AvenueMonoMed', sans-serif;
+    font-weight: normal;
 }
 
 .font-georgia {

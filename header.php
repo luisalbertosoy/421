@@ -138,7 +138,7 @@ $cta_url     = $cta['url'] ?? '#';
 
             <?php if ( $cta_label ) : ?>
             <!-- CTA desktop -->
-            <a href="<?php echo esc_url( $cta_url ); ?>" class="txt-btn geor text-items-center hidemob">
+            <a href="<?php echo esc_url( $cta_url ); ?>" class="txt-btn text-items-center hidemob">
                 <span class="dot"></span>
                 <?php echo esc_html( $cta_label ); ?>
             </a>
