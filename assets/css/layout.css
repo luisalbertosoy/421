@@ -7,9 +7,13 @@
     display: flex;
     justify-content: center;
     z-index: 100;
-    padding: 1rem;
+    padding: 3rem;
     background: transparent;
     transition: background 0.4s ease-in-out;
+}
+
+.herospace-wrapper.just-center {
+    justify-content: center;
 }
 
 .header-cont {

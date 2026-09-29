@@ -1,10 +1,13 @@
-<?php
-/**
- * Fallback template.
- *
- * @package s421
- */
+<?php get_header(); ?>
 
-get_header();
+<main id="main">
+    <?php
+    if ( have_posts() ) :
+        while ( have_posts() ) : the_post();
+            the_content();
+        endwhile;
+    endif;
+    ?>
+</main>
 
-get_footer();
+<?php get_footer(); ?>

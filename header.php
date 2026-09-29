@@ -18,6 +18,8 @@ $cta_url     = $cta['url'] ?? '#';
 
 <?php wp_body_open(); ?>
 
+<?php include get_template_directory() . '/assets/icons/icons.svg'; ?>
+
 <div id="preloader">
     <div class="loader"></div>
 </div>
@@ -29,7 +31,9 @@ $cta_url     = $cta['url'] ?? '#';
         <div class="logo-header">
             <a href="<?php echo esc_url( home_url('/') ); ?>" aria-label="421 Sound Experience">
                 <!-- Reemplazar con SVG del logo de 421 -->
-                <span class="txt-btn">421</span>
+                <svg width="132" height="80">
+                    <use xlink:href="#logotipo"></use>
+                </svg>
             </a>
         </div>
 
@@ -118,7 +122,7 @@ $cta_url     = $cta['url'] ?? '#';
                     <?php if ( $cta_label ) : ?>
                     <!-- CTA móvil -->
                     <li>
-                        <a href="<?php echo esc_url( $cta_url ); ?>" class="main-btn capsule">
+                        <a href="<?php echo esc_url( $cta_url ); ?>" class="main-btn capsule text-uppers">
                             <?php echo esc_html( $cta_label ); ?>
                         </a>
                     </li>
@@ -138,9 +142,10 @@ $cta_url     = $cta['url'] ?? '#';
 
             <?php if ( $cta_label ) : ?>
             <!-- CTA desktop -->
-            <a href="<?php echo esc_url( $cta_url ); ?>" class="txt-btn text-items-center hidemob">
-                <span class="dot"></span>
+            <a href="<?php echo esc_url( $cta_url ); ?>" class="txt-btn text-uppers text-items-center hidemob">
                 <?php echo esc_html( $cta_label ); ?>
+                <span class="dot"></span>
+                <span class="dot_fixed"></span>
             </a>
             <?php endif; ?>
 
