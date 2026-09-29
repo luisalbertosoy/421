@@ -81,6 +81,7 @@ body {
     background-color: black;
     font-size: 1rem;
     line-height: 1rem;
+    letter-spacing: -5%;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -455,7 +456,7 @@ embla {
 }
 
 .wdt-s {
-    width: 27rem;
+    width: 26rem;
 }
 
 .wdt-80 {
@@ -464,6 +465,14 @@ embla {
 
 .wdt-50 {
     width: 50%;
+}
+
+.pddng-rght-m {
+    padding-right: 9rem;
+}
+
+.pddng-bttm-s {
+    padding-bottom: .5rem;
 }
 
 /* ============ Media Queries ============ */

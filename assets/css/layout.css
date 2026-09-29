@@ -16,6 +16,10 @@
     justify-content: center;
 }
 
+.herospace-wrapper.hght-auto {
+    height: auto;
+}
+
 .header-cont {
     width: 100%;
     display: grid;

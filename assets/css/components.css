@@ -719,6 +719,8 @@
 .row.tabs-margin       { margin-bottom: -1px; }
 .row.wdth-s            { width: 25rem; }
 .row.border-down       { padding-bottom: .5rem; border-bottom: white solid 1px; }
+.row.border-down.alt   { padding-bottom: 1.5rem; }
+.row.grid-4-2-2-2-2-2  { display: grid; grid-template-columns: 4fr 2fr 2fr 2fr 2fr 2fr; }
 
 .row.herospace-bottom {
     position: absolute;
