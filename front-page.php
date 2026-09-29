@@ -3,7 +3,7 @@
 <main id="main">
 
     <!-- ============ INTRO ============ -->
-    <section id="#intro" class="herospace-wrapper just-center">
+    <section id="intro" class="herospace-wrapper just-center">
         <img src="/wp-content/uploads/2026/09/section_1_bg.webp"
              alt="Franco Giomi Wedding Photography"
              class="h-herospace-img single-img fit-fill">
@@ -27,7 +27,7 @@
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section id="#about" class="herospace-wrapper just-center">
+    <section id="about" class="herospace-wrapper just-center">
         <img src="/wp-content/uploads/2026/09/section_2_bg.webp"
              alt="Franco Giomi Wedding Photography"
              class="h-herospace-img single-img fit-fill">
@@ -56,7 +56,7 @@
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
-    <section id="#experience" class="herospace-wrapper just-center">
+    <section id="experience" class="herospace-wrapper just-center">
         <img src="/wp-content/uploads/2026/09/section_3_bg.webp"
              alt="Franco Giomi Wedding Photography"
              class="h-herospace-img single-img fit-fill">
@@ -117,7 +117,7 @@
     </section>
 
     <!-- ============ DATES ============ -->
-    <section id="#book" class="herospace-wrapper just-center">
+    <section id="book" class="herospace-wrapper just-center">
         <img src="/wp-content/uploads/2026/09/section_4_bg.webp"
              alt="Franco Giomi Wedding Photography"
              class="h-herospace-img single-img fit-fill">
@@ -215,7 +215,7 @@
     </section>
 
     <!-- ============ FOOTER ============ -->
-    <section id="#intro" class="herospace-wrapper just-center">
+    <section id="footer" class="herospace-wrapper just-center">
         <img src="/wp-content/uploads/2026/09/section_5_bg.webp"
              alt="Franco Giomi Wedding Photography"
              class="h-herospace-img single-img fit-fill">

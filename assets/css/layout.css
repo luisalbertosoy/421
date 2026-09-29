@@ -9,7 +9,25 @@
     z-index: 100;
     padding: 3rem;
     background: transparent;
-    transition: background 0.4s ease-in-out;
+    color: var(--clr-white);
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+/* Header color variants, toggled by scroll.js depending on the section under the header */
+.header-wrapper.header-light { color: var(--clr-white); }
+.header-wrapper.header-dark  { color: var(--clr-black); }
+
+.header-wrapper .logo-header svg {
+    fill: currentColor;
+    transition: fill 0.4s ease-in-out;
+}
+
+.header-wrapper .header-nav .txt-btn:not(.drpdwn) {
+    color: inherit;
+}
+
+.header-wrapper .header-nav .txt-btn:not(.drpdwn):hover {
+    color: var(--clr-midgray);
 }
 
 .herospace-wrapper.just-center {
@@ -160,8 +178,11 @@
 }
 
 @media (max-width: 768px) {
-    .header-wrapper {
+    /* The mobile header has a solid black background, so it always stays white */
+    .header-wrapper,
+    .header-wrapper.header-dark {
         padding: 0;
+        color: var(--clr-white);
     }
 
     .header-cont {

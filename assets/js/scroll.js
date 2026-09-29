@@ -33,3 +33,56 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // =========================
+    // HEADER COLOR PER SECTION
+    // =========================
+    // Section id => header variant ('light' = white, 'dark' = black).
+    const headerThemes = {
+        intro:      'light',
+        about:      'dark',
+        experience: 'light',
+        book:       'light',
+        footer:     'light',
+    };
+
+    const header   = document.querySelector('.header-wrapper');
+    const sections = Object.keys(headerThemes)
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+    if (!header || !sections.length) return;
+
+    let current = null;
+    let ticking = false;
+
+    function updateHeaderTheme() {
+        ticking = false;
+
+        // Use the vertical center of the header as the probe line.
+        const headerRect = header.getBoundingClientRect();
+        const probe      = headerRect.top + headerRect.height / 2;
+
+        const active = sections.find(section => {
+            const rect = section.getBoundingClientRect();
+            return rect.top <= probe && rect.bottom > probe;
+        });
+        const theme = active ? headerThemes[active.id] : 'light';
+        if (theme === current) return;
+
+        header.classList.remove('header-' + current);
+        header.classList.add('header-' + theme);
+        current = theme;
+    }
+
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateHeaderTheme);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateHeaderTheme();
+});
