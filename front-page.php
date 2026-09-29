@@ -19,7 +19,7 @@
             </div> 
         </div>
         <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered">
+            <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
                 <p class="text-xxs text-white">SCROLL DOWN</p>
             </div>
@@ -48,7 +48,7 @@
             </div> 
         </div>
         <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered">
+            <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon black" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
                 <p class="text-xxs text-black">SCROLL DOWN</p>
             </div>
@@ -109,7 +109,7 @@
             </div> 
         </div>
         <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered">
+            <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
                 <p class="text-xxs">SCROLL DOWN</p>
             </div>
@@ -154,7 +154,7 @@
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
-                    <p class="text-m-normal text-uppers text-end">BOOK NOW</p>
+                    <p class="text-m-normal text-uppers text-end">BOOK NOW <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
                 </div>
 
                 <div class="row grid-4-2-2-2-2-2 border-down alt">
@@ -178,7 +178,7 @@
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
-                    <p class="text-m-normal text-uppers text-end">BOOK NOW</p>
+                    <p class="text-m-normal text-uppers text-end">BOOK NOW <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
                 </div>
 
                 <div class="row grid-4-2-2-2-2-2 border-down alt">
@@ -202,12 +202,12 @@
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
-                    <p class="text-m-normal text-uppers text-end">BOOK NOW</p>
+                    <p class="text-m-normal text-uppers text-end">BOOK NOW <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
                 </div>
             </div> 
         </div>
         <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered">
+            <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
                 <p class="text-xxs">SCROLL DOWN</p>
             </div>
@@ -224,11 +224,10 @@
              alt="LET YOUR BODY LISTEN AGAIN."
              >
         </div>
-        <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered">
-                <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs text-white">SCROLL DOWN</p>
-            </div>
+        <div class="row spcbtwn items-centered herospace-bottom pddng-m">
+            <p class="text-xxs text-uppers">Powered by LPS Spatial HiFi Systems</p>
+            <p class="text-xxs text-uppers">MEXICO CITY</p>
+            <p class="text-xxs text-items-center text-uppers">INSTAGRAM <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
         </div>
     </section>
 

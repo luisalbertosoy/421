@@ -13,6 +13,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // =========================
+    // SCROLL DOWN BUTTONS
+    // =========================
+    // Each .scroll-next scrolls to the section right after its parent section.
+    document.querySelectorAll('.scroll-next').forEach(btn => {
+        function scrollToNext() {
+            const section = btn.closest('section');
+            let next = section ? section.nextElementSibling : null;
+            while (next && next.tagName !== 'SECTION') next = next.nextElementSibling;
+            if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        btn.addEventListener('click', scrollToNext);
+        btn.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                scrollToNext();
+            }
+        });
+    });
+
+    // =========================
     // FLOATING MENU SCROLL
     // =========================
     const navButtons = document.querySelectorAll('[id^="to-sec-"]');

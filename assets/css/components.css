@@ -21,10 +21,11 @@
 .dot_fixed {
     width: 0.5rem;
     height: 0.5rem;
-    background: black;
+    /* Follows the header text color (light/dark variants and hover) */
+    background: currentColor;
     border-radius: 1rem;
-    animation: 2s ease-in-out infinite;
     margin-top: -2px;
+    transition: background 0.4s ease-in-out;
 }
 
 /* ============ Slider ============ */
@@ -728,6 +729,19 @@
     bottom: 0;
     padding: 1rem;
     z-index: 4;
+}
+
+.scroll-next {
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.scroll-next:hover {
+    opacity: 0.6;
+}
+
+.row.herospace-bottom.pddng-m {
+    padding: 3rem;
 }
 
 .row.one-2-1-8-col      { display: grid; grid-template-columns: 1fr 2fr 1fr 8fr; gap: 1rem; }
