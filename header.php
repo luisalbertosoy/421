@@ -152,3 +152,5 @@ $cta_url     = $cta['url'] ?? '#';
         </div>
     </div>
 </header>
+
+<div class="main-wrapper header-blur"></div>

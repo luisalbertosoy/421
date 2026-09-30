@@ -468,7 +468,7 @@ embla {
 }
 
 .pddng-rght-m {
-    padding-right: 9rem;
+    padding-right: 3rem;
 }
 
 .pddng-bttm-s {
@@ -476,6 +476,73 @@ embla {
 }
 
 /* ============ Media Queries ============ */
+
+@media (max-width: 1600px) {
+	.text-xxxl {
+		font-size: 4rem;
+		line-height: 4rem;
+	}
+	.text-xxxl.alt {
+		font-size: 4rem;
+		line-height: 3.25rem;
+	}
+}
+
+@media (max-width: 1480px) {
+    .text-xxxl.alt {
+        font-size: 3.5rem;
+        line-height: 3rem;
+    }
+
+    .text-m-alt {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .text-m-normal {
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+    }
+}
+
+@media (max-width: 1390px) {
+	.text-xxxl {
+		font-size: 4rem;
+		line-height: 4rem;
+	}
+    .text-xxxl.alt {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+
+@media (max-width: 1350px) {
+	.text-m-xnormal {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
+    .text-m-alt {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 1300px) {
+	.text-xxxl {
+		font-size: 3rem;
+		line-height: 3rem;
+	}
+	.text-xxxl.alt {
+		font-size: 3rem;
+		line-height: 3rem;
+	}
+    .text-m-normal {
+        font-size: 1rem;
+        line-height: 1.125rem;
+    }
+    .wdt-s {
+        width: 21rem;
+    }
+}
 
 @media (max-width: 1280px) {
     .text-xm {

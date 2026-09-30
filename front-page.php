@@ -4,8 +4,7 @@
 
     <!-- ============ INTRO ============ -->
     <section id="intro" class="herospace-wrapper just-center">
-        <img src="/wp-content/uploads/2026/09/section_1_bg.webp"
-             alt="Franco Giomi Wedding Photography"
+        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_1_bg.webp"
              class="h-herospace-img single-img fit-fill">
         <div class="column xl-gap just-center wdth-m">
             <div class="row spcbtwn">
@@ -28,8 +27,7 @@
 
     <!-- ============ ABOUT ============ -->
     <section id="about" class="herospace-wrapper just-center">
-        <img src="/wp-content/uploads/2026/09/section_2_bg.webp"
-             alt="Franco Giomi Wedding Photography"
+        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_2_bg.webp"
              class="h-herospace-img single-img fit-fill">
         <div class="column pddng-m m-gap just-center">
             <div class="row spcbtwn">
@@ -56,11 +54,10 @@
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
-    <section id="experience" class="herospace-wrapper just-center">
-        <img src="/wp-content/uploads/2026/09/section_3_bg.webp"
-             alt="Franco Giomi Wedding Photography"
+    <section id="experience" class="herospace-wrapper pages just-center">
+        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_3_bg.webp"
              class="h-herospace-img single-img fit-fill">
-        <div class="column pddng-m m-gap just-center">
+        <div class="column pddng-m pages m-gap just-center">
             <div class="row spcbtwn items-end">
                 <p class="text-xxxl alt text-uppers">THE EXPERIENCE</p>
                 <p class="text-m-xnormal text-uppers text-end">SOME EXPERIENCES CATCH YOUR EYE.OURS MOVE THROUGH YOU.</p>
@@ -117,15 +114,14 @@
     </section>
 
     <!-- ============ DATES ============ -->
-    <section id="book" class="herospace-wrapper just-center">
-        <img src="/wp-content/uploads/2026/09/section_4_bg.webp"
-             alt="Franco Giomi Wedding Photography"
+    <section id="book" class="herospace-wrapper pages just-center">
+        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_4_bg.webp"
              class="h-herospace-img single-img fit-fill">
-        <div class="column pddng-m l-gap just-center">
+        <div class="column pddng-m pages-m l-gap just-center">
             <div class="column">
                 <div class="row spcbtwn items-end">
-                    <p class="text-xxxl text-uppers">EXPERIENCE.</p>
-                    <p class="text-xxxl text-uppers text-end">PRECISELY DESIGNED.</p>
+                    <p class="text-xxxl mob text-uppers">EXPERIENCE.</p>
+                    <p class="text-xxxl mob text-uppers text-end">PRECISELY DESIGNED.</p>
                 </div>
                 <div class="row spcbtwn items-end">
                     <p class="text-xxs text-uppers">We create moments you can enter.</p>
@@ -137,72 +133,72 @@
                     <p class="text-m-normal text-uppers">Vinyl BootleG AlbuM</p>
                     <p class="text-m-normal text-uppers">white label</p>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
-                    <p class="text-m-normal text-uppers text-end">BOOK NOW <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
+                    <a href="#" class="book-btn text-uppers">BOOK NOW <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
                 </div>
 
                 <div class="row grid-4-2-2-2-2-2 border-down alt">
                     <p class="text-m-normal text-uppers">Rarities & oddities</p>
                     <p class="text-m-normal text-uppers">A selection that is not revealed before it plays.</p>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
-                    <p class="text-m-normal text-uppers text-end">BOOK NOW <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
+                    <a href="#" class="book-btn text-uppers">BOOK NOW <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
                 </div>
 
                 <div class="row grid-4-2-2-2-2-2 border-down alt">
                     <p class="text-m-normal text-uppers">Rarities & oddities</p>
                     <p class="text-m-normal text-uppers">A selection that is not revealed before it plays.</p>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
                     <div class="column no-gap ">
-                        <p class="pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
+                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
                         <p class="text-end pddng-rght-m">7PM</p>
                         <p class="text-end pddng-rght-m">8:15PM</p>
                         <p class="text-end pddng-rght-m">9:30PM</p>
                     </div>
-                    <p class="text-m-normal text-uppers text-end">BOOK NOW <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
+                    <a href="#" class="book-btn text-uppers">BOOK NOW <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
                 </div>
             </div> 
         </div>
@@ -216,18 +212,17 @@
 
     <!-- ============ FOOTER ============ -->
     <section id="footer" class="herospace-wrapper just-center">
-        <img src="/wp-content/uploads/2026/09/section_5_bg.webp"
-             alt="Franco Giomi Wedding Photography"
+        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_5_bg.webp"
              class="h-herospace-img single-img fit-fill">
-        <div class="column xl-gap just-center wdth-m">
-            <img src="/wp-content/uploads/2026/09/Footer.svg"
+        <div class="column xl-gap just-center items-centered wdth-m">
+            <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/Footer.svg"
              alt="LET YOUR BODY LISTEN AGAIN."
-             >
+             class="single-img svg">
         </div>
         <div class="row spcbtwn items-centered herospace-bottom pddng-m">
             <p class="text-xxs text-uppers">Powered by LPS Spatial HiFi Systems</p>
             <p class="text-xxs text-uppers">MEXICO CITY</p>
-            <p class="text-xxs text-items-center text-uppers">INSTAGRAM <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></p>
+            <a href="https://www.instagram.com/" class="text-xxs text-items-center text-gap-xs text-uppers txt-hover" target="_blank" rel="noopener">INSTAGRAM <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
         </div>
     </section>
 

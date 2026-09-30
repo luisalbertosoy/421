@@ -107,3 +107,99 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', onScroll);
     updateHeaderTheme();
 });
+document.addEventListener('DOMContentLoaded', function () {
+
+    // =========================
+    // HEADER NAV ACTIVE STATE
+    // =========================
+    // Marks the header link (desktop menu, desktop CTA, mobile menu) whose #hash matches the
+    // section under the header. When several links share a section, the last clicked one wins.
+    const header   = document.querySelector('.header-wrapper');
+    const allLinks = Array.from(document.querySelectorAll(
+        '.header-nav .menu-list > li > a.txt-btn, .header-nav > a.txt-btn'
+    ));
+    const sectionOf = link => (link.hash ? document.getElementById(link.hash.slice(1)) : null);
+    const links     = allLinks.filter(sectionOf);
+    if (!header || !allLinks.length) return;
+
+    // Unique sections referenced by the nav, in document order.
+    const sections = [...new Set(links.map(sectionOf))]
+        .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING) ? -1 : 1);
+
+    // Desktop and mobile menus each keep their own active link.
+    const groupOf = link => (link.closest('#mobile-menu') ? 'mobile' : 'desktop');
+
+    let lastClicked = null;
+    let locked      = false; // Ignore scroll updates while a clicked link is smooth-scrolling.
+    let unlockTimer;
+
+    function applyActive(activeLinks) {
+        allLinks.forEach(link => {
+            const isActive = activeLinks.includes(link);
+            link.classList.toggle('active', isActive);
+            if (isActive) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+        });
+    }
+
+    function setActive(id) {
+        const active = [];
+        ['desktop', 'mobile'].forEach(group => {
+            const candidates = links.filter(link => groupOf(link) === group && link.hash === '#' + id);
+            if (!candidates.length) return;
+            active.push(candidates.includes(lastClicked) ? lastClicked : candidates[0]);
+        });
+        applyActive(active);
+    }
+
+    function updateActive() {
+        if (locked) return;
+
+        // Same probe line as the header theme: the vertical center of the header.
+        const headerRect = header.getBoundingClientRect();
+        const probe      = headerRect.top + headerRect.height / 2;
+
+        // Last nav section whose top has passed the probe; defaults to the first one.
+        if (!sections.length) return;
+        let active = sections[0];
+        sections.forEach(section => {
+            if (section.getBoundingClientRect().top <= probe) active = section;
+        });
+        setActive(active.id);
+    }
+
+    function unlock() {
+        clearTimeout(unlockTimer);
+        locked = false;
+        updateActive();
+    }
+
+    allLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            lastClicked = this;
+            applyActive([this]);
+            if (!sectionOf(this)) return;
+            locked = true;
+            // Release once scrolling settles ('scrollend' where supported, timeout as fallback).
+            clearTimeout(unlockTimer);
+            unlockTimer = setTimeout(unlock, 1200);
+        });
+    });
+
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+        if (locked) {
+            // Keep extending the lock while the smooth scroll is still moving.
+            clearTimeout(unlockTimer);
+            unlockTimer = setTimeout(unlock, 150);
+            return;
+        }
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { ticking = false; updateActive(); });
+    }, { passive: true });
+    window.addEventListener('scrollend', () => { if (locked) unlock(); });
+    window.addEventListener('resize', updateActive);
+
+    updateActive();
+});

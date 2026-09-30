@@ -6,7 +6,7 @@
     background: var(--clr-orange);
     border-radius: 1rem;
     animation: blink 2s ease-in-out infinite;
-    margin-top: -2px;
+    margin-left: .5rem;
 }
 
 @keyframes blink {
@@ -24,7 +24,6 @@
     /* Follows the header text color (light/dark variants and hover) */
     background: currentColor;
     border-radius: 1rem;
-    margin-top: -2px;
     transition: background 0.4s ease-in-out;
 }
 
@@ -119,6 +118,61 @@
 }
 
 .txt-btn:hover {
+    color: var(--clr-midgray);
+}
+
+/* Book now button: gradient fades in on hover via ::before (gradients can't be transitioned) */
+.book-btn {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+    gap: .5rem;
+    width: 164px;
+    height: 48px;
+    padding-top: 4px;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 1rem;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.book-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, #000000, #3d0101, #ff3600, #ffffff);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.book-btn:hover::before {
+    opacity: 1;
+}
+
+.book-btn,
+.book-btn:hover,
+.book-btn .icon {
+    color: white;
+    fill: white;
+}
+
+/* Same hover as the header nav links, without the .txt-btn sizing */
+.txt-hover {
+    transition: color 0.1s ease-in-out;
+}
+
+.txt-hover:hover {
     color: var(--clr-midgray);
 }
 
@@ -473,7 +527,7 @@
 }
 
 .herospace-wrapper.pages {
-    height: 70vh;
+    height: auto;
 }
 
 .herospace-wrapper.blog-single {
@@ -674,6 +728,17 @@
 .main-wrapper.space-l       { padding: 20rem 1rem 8rem 1rem; }
 .main-wrapper.space-l-alt   { padding: 12rem 1rem 8rem 1rem; }
 
+.main-wrapper.header-blur {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0;
+	height: 11rem;
+	backdrop-filter: blur(8px);
+    mask-image: linear-gradient(rgb(0, 0, 0) 56%, transparent 100%);
+	z-index: 20;
+}
+
 .carrousel-header {
     width: 100%;
 }
@@ -800,6 +865,8 @@
 .column.relative        { position: relative; }
 .column.hght-stretch    { height: stretch; }
 .column.pddng-m         { padding: 3rem; }
+.column.pddng-m.pages   { padding: 10% 3rem; }
+.column.pddng-m.pages-m   { padding: 12% 3rem; }
 .column.no-gap          { gap: 0; }
 .column.xxs-gap         { gap: .125rem; }
 .column.xs-gap          { gap: .25rem; }
@@ -1670,6 +1737,26 @@ label { margin-top: 1rem; }
 .hsfc-NavigationRow { margin-top: 0 !important; }
 
 /* ============ Media Queries ============ */
+
+@media (max-width: 1480px) {
+    .single-img.svg {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1300px) {
+    .column.pddng-m.pages {
+        padding: 14% 3rem;
+    }
+    .column.pddng-m.pages-m {
+        padding: 14% 3rem;
+    }
+    .single-img.svg {
+        width: 70%;
+        height: auto;
+    }
+}
 
 @media (max-width: 1080px) {
     .single-img.svg.herospace { width: 100%; }

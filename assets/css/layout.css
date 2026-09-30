@@ -30,6 +30,13 @@
     color: var(--clr-midgray);
 }
 
+/* Active nav link, toggled by scroll.js depending on the current section */
+.header-wrapper .header-nav .txt-btn.active {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .375rem;
+}
+
 .herospace-wrapper.just-center {
     justify-content: center;
 }
