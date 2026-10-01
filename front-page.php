@@ -29,7 +29,6 @@ $about_body       = $about['body_text'] ?? '421 is a sound experience company<br
 $about_secondary1 = $about['secondary_text_one'] ?? '421 CREATES IMMERSIVE EXPERIENCES<br>WHERE SOUND BECOMES PRESENCE.';
 $about_secondary2 = $about['secondary_text_two'] ?? 'IT SHAPES THE SPACE. SHIFTS PERSPECTIVE.';
 $about_list       = $about['list_text'] ?? 'SOUND<br><br>BODY<br><br>SPACE<br><br>PERCEPTION<br><br>TECHNOLOGY';
-$about_scroll     = $about['scroll_label'] ?? 'SCROLL DOWN';
 
 // Experience (ACF group "Home — Experience"). Fallbacks match the field defaults.
 $experience       = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'experience', $home_id ) ?: array() ) : array();
@@ -39,7 +38,6 @@ $experience_body  = $experience['body_text'] ?? 'SOME EXPERIENCES CATCH YOUR EYE
 $experience_items = array_key_exists( 'items', $experience )
 	? ( is_array( $experience['items'] ) ? array_column( $experience['items'], 'text' ) : array() )
 	: s421_experience_default_items();
-$experience_scroll = $experience['scroll_label'] ?? 'SCROLL DOWN';
 
 // Dates (ACF group "Home — Dates"). Fallbacks match the field defaults.
 $dates            = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'dates', $home_id ) ?: array() ) : array();
@@ -51,7 +49,6 @@ $dates_secondary2 = $dates['secondary_text_two'] ?? 'BOOK A JOURNEY';
 $dates_events     = array_key_exists( 'events', $dates )
 	? ( is_array( $dates['events'] ) ? $dates['events'] : array() )
 	: s421_dates_default_events();
-$dates_scroll     = $dates['scroll_label'] ?? 'SCROLL DOWN';
 
 // Footer (ACF group "Home — Footer"). Fallbacks match the field defaults.
 $footer            = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'footer', $home_id ) ?: array() ) : array();
@@ -59,7 +56,8 @@ $footer_bg         = ( $footer['background'] ?? '' ) ?: 'https://himnoestudio.co
 $footer_image      = ( $footer['main_image'] ?? '' ) ?: 'https://himnoestudio.com/421/wp-content/uploads/2026/09/Footer.svg';
 $footer_image_alt  = $footer['main_image_alt'] ?? 'LET YOUR BODY LISTEN AGAIN.';
 $footer_secondary1 = $footer['secondary_text_one'] ?? 'Powered by LPS Spatial HiFi Systems';
-$footer_secondary2 = $footer['secondary_text_two'] ?? 'MEXICO CITY';
+$footer_contact    = $footer['contact_label'] ?? 'CONTACT US';
+$footer_email      = sanitize_email( $footer['contact_email'] ?? 'info@421experiences.com' );
 $footer_social     = array_key_exists( 'social_link', $footer )
 	? ( is_array( $footer['social_link'] ) ? $footer['social_link'] : array() )
 	: s421_footer_default_social_link();
@@ -111,19 +109,13 @@ $footer_social_url = $footer_social['url'] ?? '';
                 <p class="text-m-xnormal text-medium text-end text-uppers text-black"><?php echo wp_kses( $about_list, $s421_br ); ?></p>
             </div>
         </div>
-        <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
-                <svg class="icon black" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs text-black"><?php echo wp_kses( $about_scroll, $s421_br ); ?></p>
-            </div>
-        </div>
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
     <section id="experience" class="herospace-wrapper pages just-center">
         <img src="<?php echo esc_url( $experience_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
-        <div class="column pddng-m pages m-gap just-center">
+        <div class="column pddng-m pages l-gap just-center">
             <div class="row spcbtwn items-end">
                 <p class="text-xxxl alt text-uppers"><?php echo wp_kses( $experience_title, $s421_br ); ?></p>
                 <p class="text-m-xnormal text-uppers text-end"><?php echo wp_kses( $experience_body, $s421_br ); ?></p>
@@ -137,19 +129,13 @@ $footer_social_url = $footer_social['url'] ?? '';
                 <?php endforeach; ?>
             </div>
         </div>
-        <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
-                <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs"><?php echo wp_kses( $experience_scroll, $s421_br ); ?></p>
-            </div>
-        </div>
     </section>
 
     <!-- ============ DATES ============ -->
     <section id="book" class="herospace-wrapper pages just-center">
         <img src="<?php echo esc_url( $dates_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
-        <div class="column pddng-m pages-m l-gap just-center">
+        <div class="column pddng-m pages-m xl-gap just-center">
             <div class="column">
                 <div class="row spcbtwn items-end">
                     <p class="text-xxxl mob text-uppers"><?php echo wp_kses( $dates_title1, $s421_br ); ?></p>
@@ -187,12 +173,6 @@ $footer_social_url = $footer_social['url'] ?? '';
                 <?php endforeach; ?>
             </div> 
         </div>
-        <div class="row just-center items-centered herospace-bottom">
-            <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
-                <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs"><?php echo wp_kses( $dates_scroll, $s421_br ); ?></p>
-            </div>
-        </div>
     </section>
 
     <!-- ============ FOOTER ============ -->
@@ -206,7 +186,9 @@ $footer_social_url = $footer_social['url'] ?? '';
         </div>
         <div class="row spcbtwn items-centered herospace-bottom pddng-m">
             <p class="text-xxs text-uppers"><?php echo wp_kses( $footer_secondary1, $s421_br ); ?></p>
-            <p class="text-xxs text-uppers"><?php echo wp_kses( $footer_secondary2, $s421_br ); ?></p>
+            <?php if ( $footer_email ) : ?>
+            <a href="<?php echo esc_url( 'mailto:' . $footer_email ); ?>" class="text-xxs text-uppers txt-hover"><?php echo esc_html( $footer_contact ); ?></a>
+            <?php endif; ?>
             <?php if ( $footer_social_url ) : ?>
             <a href="<?php echo esc_url( $footer_social_url ); ?>" class="text-xxs text-items-center text-gap-xs text-uppers txt-hover" target="_blank" rel="noopener"><?php echo esc_html( $footer_social['title'] ?? '' ); ?> <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
             <?php endif; ?>

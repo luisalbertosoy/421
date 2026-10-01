@@ -307,27 +307,6 @@
                             "parent_repeater": "field_s421_dates_events"
                         }
                     ]
-                },
-                {
-                    "aria-label": "",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "key": "field_s421_dates_scroll_label",
-                    "label": "Scroll label",
-                    "name": "scroll_label",
-                    "type": "textarea",
-                    "default_value": "SCROLL DOWN",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "rows": 1,
-                    "placeholder": "",
-                    "new_lines": ""
                 }
             ]
         }
@@ -355,5 +334,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790835271
+    "modified": 1790890118
 }

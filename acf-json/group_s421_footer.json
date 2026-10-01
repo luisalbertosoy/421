@@ -118,20 +118,40 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
-                    "key": "field_s421_footer_secondary_text_two",
-                    "label": "Secondary text two",
-                    "name": "secondary_text_two",
-                    "type": "textarea",
-                    "default_value": "MEXICO CITY",
+                    "key": "field_s421_footer_contact_label",
+                    "label": "Contact label",
+                    "name": "contact_label",
+                    "type": "text",
+                    "default_value": "CONTACT US",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "rows": 2,
                     "placeholder": "",
-                    "new_lines": ""
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Opens the visitor's email client (mailto). Leave empty to hide it.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_footer_contact_email",
+                    "label": "Contact email",
+                    "name": "contact_email",
+                    "type": "email",
+                    "default_value": "info@421experiences.com",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "aria-label": "",
@@ -176,5 +196,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790835620
+    "modified": 1790890922
 }
