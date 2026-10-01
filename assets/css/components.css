@@ -1785,28 +1785,72 @@ label { margin-top: 1rem; }
         left: 0;
         width: 100%;
         height: 100vh;
-        display: none;
+        height: 100svh;
+        /* Always flex (no display toggle) so opacity/visibility can transition */
+        display: flex;
         flex-direction: column;
-        justify-content: start;
+        /* Vertically centered; "safe" keeps the top reachable if the content overflows */
+        justify-content: center;
+        justify-content: safe center;
         align-items: start;
-        background: var(--clr-black);
-        padding: 10rem 1rem 8rem 1rem;
+        background: transparent;
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        padding: 6rem 1rem;
         z-index: -1;
         scroll-snap-type: y mandatory;
         -webkit-overflow-scrolling: touch;
         overflow-y: scroll;
         scrollbar-width: none;
         opacity: 0;
-        transform: translateY(10px);
         visibility: hidden;
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s;
+        transition: opacity 0.4s ease-out, visibility 0.4s;
     }
 
     .menu-list.showmob.active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Items fade up one after another once the overlay opens; on close they fade out together */
+    .menu-list.showmob > li {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+    }
+
+    .menu-list.showmob.active > li {
         opacity: 1;
         transform: translateY(0);
-        visibility: visible;
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .menu-list.showmob.active > li:nth-child(1) { transition-delay: 0.15s; }
+    .menu-list.showmob.active > li:nth-child(2) { transition-delay: 0.2s; }
+    .menu-list.showmob.active > li:nth-child(3) { transition-delay: 0.25s; }
+    .menu-list.showmob.active > li:nth-child(4) { transition-delay: 0.3s; }
+    .menu-list.showmob.active > li:nth-child(5) { transition-delay: 0.35s; }
+    .menu-list.showmob.active > li:nth-child(n+6) { transition-delay: 0.4s; }
+
+    /* The CTA is shown first, so it enters first */
+    .menu-list.showmob.active > li:has(> .book-btn) { transition-delay: 0.1s; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .menu-list.showmob,
+        .menu-list.showmob > li { transition: none; transform: none; }
+    }
+
+    /* Book now CTA: moved above the nav links and centered */
+    .menu-list.showmob > li:has(> .book-btn) {
+        order: -1;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Same dot spacing as the desktop header CTA */
+    .menu-list.showmob .book-btn {
+        gap: .25rem;
     }
 
     .menu.two-col             { gap: 1.5rem; display: flex; justify-content: end; }
@@ -1824,6 +1868,9 @@ label { margin-top: 1rem; }
 
     .txt-btn.mainmob {
         width: 100%;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        text-align: left;
         justify-content: space-between;
         border-bottom: var(--clr-gray) solid 1px;
         padding-bottom: 1rem;
@@ -1911,7 +1958,7 @@ label { margin-top: 1rem; }
 
     .h-h-content-right.centermob  { justify-content: center; }
     .h-h-content-right.hidemob    { display: none; }
-    .h-herospace-img               { width: 100%; height: 100svh; }
+    .h-herospace-img               { width: 100%; }
 
     .single-card.two {
         display: flex;

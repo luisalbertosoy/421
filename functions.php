@@ -186,9 +186,18 @@ function s421_header_scripts(): void {
 document.addEventListener("DOMContentLoaded", function () {
 	const toggleBtn = document.querySelector('.menu-toggle');
 	const menu      = document.querySelector('.menu-list.showmob');
-	if (toggleBtn && menu) {
-		toggleBtn.addEventListener('click', () => menu.classList.toggle('active'));
-	}
+	if (!toggleBtn || !menu) return;
+
+	const setOpen = (open) => {
+		menu.classList.toggle('active', open);
+		toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+		toggleBtn.setAttribute('aria-label', open ? <?php echo wp_json_encode( __( 'Cerrar menú', 's421' ) ); ?> : <?php echo wp_json_encode( __( 'Abrir menú', 's421' ) ); ?>);
+	};
+
+	toggleBtn.addEventListener('click', () => setOpen(!menu.classList.contains('active')));
+
+	// One-page anchors: close the menu after picking a link.
+	menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
 });
 </script>
 	<?php

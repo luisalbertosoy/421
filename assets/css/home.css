@@ -1,0 +1,507 @@
+/* ============ Home: per-section responsive rules ============ */
+/* Loaded only on the front page, after components.css. Rules are scoped by section id
+   so the shared utility classes keep their behavior elsewhere. */
+
+/* ============ Intro ============ */
+
+/* Small laptops / tablets landscape: the 55rem column needs side breathing room */
+@media (max-width: 960px) {
+    #intro .column.wdth-m {
+        width: 100%;
+        max-width: 55rem;
+        padding: 0 2rem;
+    }
+
+    /* fit-fill distorts the background on portrait screens */
+    #intro .h-herospace-img {
+        object-fit: cover;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* Keep a full-screen intro (the global mobile rule collapses heroes to auto height) */
+    #intro.herospace-wrapper {
+        height: auto;
+        min-height: 100svh;
+        padding-top: 0;
+    }
+
+    #intro .h-herospace-img {
+        inset: 0;
+        height: 100%;
+    }
+
+    /* Top padding clears the fixed header, bottom padding clears "Scroll down" */
+    #intro .column.wdth-m {
+        padding: 8rem 1rem 7rem;
+        gap: 4rem;
+    }
+
+    /* Headline on top, description below aligned to the right */
+    #intro .row.spcbtwn:not(.items-end) {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    #intro .row.spcbtwn:not(.items-end) .text-end {
+        align-self: end;
+        line-height: 1.25rem;
+    }
+
+    /* Two small tags side by side, closing statement on its own line */
+    #intro .row.items-end {
+        flex-wrap: wrap;
+        row-gap: 5rem;
+    }
+
+    #intro .row.items-end .text-xxs:nth-child(2) {
+        text-align: end;
+    }
+
+    #intro .row.items-end .text-m-xnormal {
+        flex-basis: 100%;
+        text-align: start;
+    }
+
+    #intro .text-m-alt {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    #intro .text-m-xnormal {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #intro .column.wdth-m {
+        padding: 7rem 1rem 6.5rem;
+        gap: 3rem;
+    }
+
+    #intro .row.items-end .text-xxs {
+        flex: 1 1 0;
+    }
+
+    #intro .text-m-alt {
+        font-size: 1.75rem;
+        line-height: 1.75rem;
+    }
+
+    #intro .text-m-xnormal {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+}
+
+/* ============ About ============ */
+
+/* Small laptops / tablets landscape: give the headline room by moving the tags to their own line */
+@media (max-width: 960px) {
+    #about .column > .row:first-child {
+        flex-wrap: wrap;
+        row-gap: 2rem;
+    }
+
+    #about .row.wdth-s {
+        flex-basis: 100%;
+        max-width: 25rem;
+    }
+
+    /* fit-fill distorts the background on portrait screens */
+    #about .h-herospace-img {
+        object-fit: cover;
+    }
+}
+
+/* Tablet: single column in reading order
+   tags → headline → description → list → statement → closing line */
+@media (max-width: 768px) {
+    /* Keep a full-screen section (the global mobile rule collapses heroes to auto height) */
+    #about.herospace-wrapper {
+        height: auto;
+        min-height: 100svh;
+        padding: 3rem 0;
+    }
+
+    #about .h-herospace-img {
+        inset: 0;
+        height: 100%;
+    }
+
+    /* Top padding clears the fixed header, bottom padding clears "Scroll down" */
+    #about .column.pddng-m {
+        padding: 8rem 1rem 7rem;
+        gap: 2rem;
+    }
+
+    /* Flatten both rows so their children can be reordered inside the column */
+    #about .column > .row {
+        display: contents;
+    }
+
+    #about .row.wdth-s {
+        order: 1;
+        width: 100%;
+        max-width: none;
+    }
+
+    #about .text-m-alt {
+        order: 2;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    /* "...exploring the relationship between:" leads straight into the list */
+    #about .column > .row:first-child > .text-end {
+        order: 3;
+        align-self: end;
+        line-height: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    #about .text-m-xnormal.text-end {
+        order: 4;
+        align-self: end;
+        line-height: 1.5rem;
+    }
+
+    #about .row.items-end > p:first-child {
+        order: 5;
+        margin-top: 2rem;
+        line-height: 1.25rem;
+    }
+
+    #about .row.items-end > .text-m-xnormal:not(.text-end) {
+        order: 6;
+    }
+
+    #about .text-m-xnormal {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #about .column.pddng-m {
+        padding: 7rem 1rem 6.5rem;
+        gap: 2rem;
+    }
+
+    #about .text-m-alt {
+        font-size: 1.75rem;
+        line-height: 1.75rem;
+    }
+
+    #about .text-m-xnormal {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+    #about .text-m-xnormal.text-end {
+        line-height: 1.25rem;
+    }
+}
+
+/* ============ Experience ============ */
+
+/* Small laptops / tablets landscape */
+@media (max-width: 960px) {
+    /* Let the tagline wrap next to the title instead of squeezing it */
+    #experience .column > .row.items-end > .text-end {
+        max-width: 22rem;
+    }
+
+    /* fit-fill distorts the background on portrait screens */
+    #experience .h-herospace-img {
+        object-fit: cover;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* The global .pages rule caps heroes at 65vh, which would clip the 10-item list */
+    #experience.herospace-wrapper.pages {
+        height: auto;
+        min-height: 100svh;
+        padding-top: 0;
+    }
+
+    #experience .h-herospace-img.pages {
+        inset: 0;
+        height: 100%;
+    }
+
+    /* Top padding clears the fixed header, bottom padding clears "Scroll down" */
+    #experience .column.pddng-m.pages {
+        padding: 10rem 1rem 7rem;
+        gap: 3rem;
+    }
+
+    /* Title on top, tagline below aligned to the right */
+    #experience .column > .row.items-end {
+        flex-direction: column;
+        align-items: start;
+        gap: 1.5rem;
+    }
+
+    #experience .column > .row.items-end > .text-end {
+        align-self: start;
+        max-width: 20rem;
+        text-align: start;
+    }
+
+    #experience .text-xxxl.alt {
+        font-size: 3rem;
+        line-height: 2.75rem;
+    }
+
+    #experience .text-m-xnormal {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+    /* Numbered list: numbers on the left, phrases on a fluid right column */
+    #experience .row.border-down {
+        align-items: baseline;
+    }
+
+    #experience .row.border-down .wdt-s {
+        width: auto;
+        flex: 0 1 60%;
+    }
+
+    #experience .text-m-normal {
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #experience .column.pddng-m.pages {
+        padding: 10rem 1rem 10rem;
+        gap: 3rem;
+    }
+
+    #experience .text-xxxl.alt {
+        font-size: 2.5rem;
+        line-height: 2.25rem;
+    }
+
+    #experience .text-m-xnormal {
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+    }
+
+    #experience .row.border-down .wdt-s {
+        flex-basis: 70%;
+    }
+
+    #experience .text-m-normal {
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+}
+
+/* ============ Dates (#book) ============ */
+
+/* Small laptops / tablets: six columns get too narrow for the dates.
+   Event rows become two lines: title + description, then the three dates + button */
+@media (max-width: 1080px) {
+    #book .row.grid-4-2-2-2-2-2 {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 2rem;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > p:nth-child(1),
+    #book .row.grid-4-2-2-2-2-2 > p:nth-child(2) {
+        grid-column: span 2;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > .book-btn {
+        align-self: center;
+    }
+}
+
+@media (max-width: 960px) {
+    /* fit-fill distorts the background on portrait screens */
+    #book .h-herospace-img {
+        object-fit: cover;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* The global .pages rule caps heroes at 65vh, which would clip the event list */
+    #book.herospace-wrapper.pages {
+        height: auto;
+        min-height: 100svh;
+        padding-top: 0;
+    }
+
+    #book .h-herospace-img.pages {
+        inset: 0;
+        height: 100%;
+    }
+
+    /* Top padding clears the fixed header, bottom padding clears "Scroll down" */
+    #book .column.pddng-m.pages-m {
+        padding: 10rem 1rem 10rem;
+        gap: 3.5rem;
+    }
+
+    /* Headline: "EXPERIENCE." on top, "PRECISELY DESIGNED." below on the right */
+    #book .column > .column:first-child > .row:first-child {
+        flex-direction: column;
+        align-items: start;
+        gap: 0;
+    }
+
+    #book .column > .column:first-child > .row:first-child > .text-end {
+        align-self: end;
+    }
+
+    #book .text-xxxl.mob {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    /* More air between events */
+    #book .column > .column:last-child {
+        gap: 2rem;
+    }
+}
+
+/* Large phones: dates stack as lines ("date ... times") instead of columns */
+@media (max-width: 640px) {
+    #book .row.grid-4-2-2-2-2-2 {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > p:nth-child(1),
+    #book .row.grid-4-2-2-2-2-2 > p:nth-child(2) {
+        grid-column: auto;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > p:nth-child(1) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > p:nth-child(2) {
+        margin-bottom: .5rem;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > .column {
+        flex-direction: row;
+        align-items: baseline;
+        gap: .75rem;
+    }
+
+    /* Date takes the free space, times line up on the right */
+    #book .row.grid-4-2-2-2-2-2 > .column > p:first-child {
+        flex: 1;
+        padding-bottom: 0;
+        text-align: start;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > .column > .pddng-rght-m {
+        padding-right: 0;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > .book-btn {
+        justify-self: center;
+        margin-top: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #book .column.pddng-m.pages-m {
+        padding: 10rem 1rem 6.5rem;
+        gap: 3.5rem;
+    }
+
+    #book .text-xxxl.mob {
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > .column {
+        gap: .5rem;
+    }
+
+    #book .row.grid-4-2-2-2-2-2 > .column > p {
+        font-size: .875rem;
+    }
+}
+
+/* ============ Footer ============ */
+
+/* Small laptops / tablets landscape: the 55rem column needs side breathing room */
+@media (max-width: 960px) {
+    #footer .column.wdth-m {
+        width: 100%;
+        max-width: 55rem;
+        padding: 0 2rem;
+    }
+
+    /* fit-fill distorts the background on portrait screens */
+    #footer .h-herospace-img {
+        object-fit: cover;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* Keep a full-screen closing section (the global mobile rule collapses heroes to auto height) */
+    #footer.herospace-wrapper {
+        height: auto;
+        min-height: 100svh;
+        padding-top: 0;
+    }
+
+    #footer .h-herospace-img {
+        inset: 0;
+        height: 100%;
+    }
+
+    /* Top padding clears the fixed header, bottom padding clears the credits bar */
+    #footer .column.wdth-m {
+        padding: 8rem 1rem 7rem;
+    }
+
+    #footer .single-img.svg {
+        width: 85%;
+    }
+
+    #footer .row.herospace-bottom.pddng-m {
+        padding: 0 1rem 2rem;
+    }
+}
+
+/* Mobile: credits on their own line, city left and Instagram right below */
+@media (max-width: 480px) {
+    #footer .column.wdth-m {
+        padding: 7rem 1rem 8rem;
+    }
+
+    #footer .single-img.svg {
+        width: 100%;
+    }
+
+    #footer .row.herospace-bottom.pddng-m {
+        flex-wrap: wrap;
+        row-gap: .75rem;
+    }
+
+    #footer .row.herospace-bottom > p:first-child {
+        flex-basis: 100%;
+    }
+}

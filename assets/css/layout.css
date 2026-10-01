@@ -185,26 +185,34 @@
 }
 
 @media (max-width: 768px) {
-    /* The mobile header has a solid black background, so it always stays white */
-    .header-wrapper,
-    .header-wrapper.header-dark {
+    /* No solid background: the header sits over the shared .header-blur layer, like desktop */
+    .header-wrapper {
         padding: 0;
-        color: var(--clr-white);
     }
 
     .header-cont {
         padding: 1rem;
         align-items: center;
-        background: var(--clr-black);
     }
 
+    /* Toggle sits on the right edge */
     .header-nav {
         flex-direction: row;
+        justify-content: end;
+    }
+
+    /* Desktop CTA is hidden; the mobile menu has its own one */
+    .header-nav > .txt-btn.hidemob {
+        display: none;
     }
 
     .menu-toggle {
         display: flex;
-        color: var(--clr-white);
+        color: inherit;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
         transition: color 0.4s ease-in-out;
         width: 2.5rem;
         height: 2.5rem;
@@ -212,8 +220,13 @@
         align-items: center;
     }
 
-    .menu-toggle.toppage {
-        color: var(--clr-white);
+    /* Plus icon rotates 45deg into an X when the menu is open */
+    .menu-toggle .icon {
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .menu-toggle[aria-expanded="true"] .icon {
+        transform: rotate(45deg);
     }
 
     .footer-wrapper {

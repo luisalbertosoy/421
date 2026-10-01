@@ -122,8 +122,10 @@ $cta_url     = $cta['url'] ?? '#';
                     <?php if ( $cta_label ) : ?>
                     <!-- CTA móvil -->
                     <li>
-                        <a href="<?php echo esc_url( $cta_url ); ?>" class="main-btn capsule text-uppers">
+                        <a href="<?php echo esc_url( $cta_url ); ?>" class="book-btn text-uppers">
                             <?php echo esc_html( $cta_label ); ?>
+                            <span class="dot"></span>
+                            <span class="dot_fixed"></span>
                         </a>
                     </li>
                     <?php endif; ?>
