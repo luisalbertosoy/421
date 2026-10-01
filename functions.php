@@ -154,6 +154,49 @@ function s421_acf_safe( $array, string $path, $default = '' ) {
 }
 
 // =========================
+// ACF DEFAULTS
+// =========================
+
+/**
+ * Default rows for the Experience numbered list (ACF repeaters have no default value).
+ */
+function s421_experience_default_items(): array {
+	return array(
+		'Sound travels.',
+		'THROUGH AIR.',
+		'THROUGH ARCHITECTURE.',
+		'THROUGH YOU.',
+		'IT CREATES TENSION.',
+		'RELEASE.',
+		'TRIGGERS EMOTION.',
+		'CHANGES YOUR STATE.',
+		'UNTIL LISTENING, BECOMES FEELING.',
+		'AND YOU ARE PART OF THE SOUND.',
+	);
+}
+
+/**
+ * Prefill the Experience repeater with the default rows until it is saved for the first time.
+ * Applies to both the editor and the front end. Once saved (even empty), the stored value wins.
+ */
+function s421_experience_items_defaults( $value, $post_id, array $field ) {
+	if ( ! empty( $value ) || ! is_numeric( $post_id ) ) {
+		return $value;
+	}
+
+	// The repeater lives inside the "experience" group, so its meta key is "experience_items".
+	if ( metadata_exists( 'post', (int) $post_id, 'experience_items' ) ) {
+		return $value;
+	}
+
+	return array_map(
+		static fn( string $text ): array => array( 'field_s421_experience_item_text' => $text ),
+		s421_experience_default_items()
+	);
+}
+add_filter( 'acf/load_value/key=field_s421_experience_items', 's421_experience_items_defaults', 20, 3 );
+
+// =========================
 // BODY CLASSES
 // =========================
 

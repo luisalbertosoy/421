@@ -1,0 +1,183 @@
+{
+    "key": "group_s421_experience",
+    "title": "Home — Experience",
+    "fields": [
+        {
+            "aria-label": "",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_s421_experience",
+            "label": "Experience",
+            "name": "experience",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "aria-label": "",
+                    "instructions": "Leave empty to use the default background.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_experience_background",
+                    "label": "Background image",
+                    "name": "background",
+                    "type": "image",
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Use &lt;br&gt; for line breaks.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_experience_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "textarea",
+                    "default_value": "THE EXPERIENCE",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Use &lt;br&gt; for line breaks.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_experience_body_text",
+                    "label": "Body text",
+                    "name": "body_text",
+                    "type": "textarea",
+                    "default_value": "SOME EXPERIENCES CATCH YOUR EYE.OURS MOVE THROUGH YOU.",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Numbers (01, 02…) are added automatically in order.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_experience_items",
+                    "label": "Numbered list",
+                    "name": "items",
+                    "type": "repeater",
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add item",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "aria-label": "",
+                            "instructions": "Use &lt;br&gt; for line breaks.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "key": "field_s421_experience_item_text",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "textarea",
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": 1,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_repeater": "field_s421_experience_items"
+                        }
+                    ]
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_experience_scroll_label",
+                    "label": "Scroll label",
+                    "name": "scroll_label",
+                    "type": "textarea",
+                    "default_value": "SCROLL DOWN",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 1,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "32"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Experience section of the one-page. Read in front-page.php from the page with slug \"home\". Default list rows come from s421_experience_default_items().",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1790834461
+}

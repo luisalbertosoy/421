@@ -1,114 +1,122 @@
-<?php get_header(); ?>
+<?php
+get_header();
+
+// Only <br> is allowed in the textarea fields.
+$s421_br = array( 'br' => array() );
+
+// All landing sections are edited on the page with slug "home".
+$home_page = get_page_by_path( 'home' );
+$home_id   = $home_page ? $home_page->ID : 0;
+
+// Intro (ACF group "Home — Intro"). Fallbacks match the field defaults.
+$intro            = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'intro', $home_id ) ?: array() ) : array();
+$intro_bg         = ( $intro['background'] ?? '' ) ?: 'https://himnoestudio.com/421/wp-content/uploads/2026/09/section_1_bg.webp';
+$intro_title      = $intro['title'] ?? 'STEP INSIDE<br>THE EXPERIENCE';
+$intro_body       = $intro['body_text'] ?? '421 creates immersive sound<br>experiences designed to<br>turn listening into<br>something beyond.';
+$intro_secondary1 = $intro['secondary_text_one'] ?? 'ENTER THE SOUND.';
+$intro_secondary2 = $intro['secondary_text_two'] ?? 'WELCOME TO THE INSIDE OF SOUND.';
+$intro_closing    = $intro['closing_text'] ?? 'SOMETHING THAT<br>BECOMES<br>PART OF YOU';
+$intro_scroll     = $intro['scroll_label'] ?? 'SCROLL DOWN';
+
+// About (ACF group "Home — About"). Fallbacks match the field defaults.
+$about            = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'about', $home_id ) ?: array() ) : array();
+$about_bg         = ( $about['background'] ?? '' ) ?: 'https://himnoestudio.com/421/wp-content/uploads/2026/09/section_2_bg.webp';
+$about_small1     = $about['small_text_one'] ?? 'Who we are';
+$about_small2     = $about['small_text_two'] ?? 'and';
+$about_small3     = $about['small_text_three'] ?? 'WHAT IS 421?';
+$about_title      = $about['title'] ?? 'SOUND AS A LIVING FORCE.';
+$about_body       = $about['body_text'] ?? '421 is a sound experience company<br>exploring the relationship between:';
+$about_secondary1 = $about['secondary_text_one'] ?? '421 CREATES IMMERSIVE EXPERIENCES<br>WHERE SOUND BECOMES PRESENCE.';
+$about_secondary2 = $about['secondary_text_two'] ?? 'IT SHAPES THE SPACE. SHIFTS PERSPECTIVE.';
+$about_list       = $about['list_text'] ?? 'SOUND<br><br>BODY<br><br>SPACE<br><br>PERCEPTION<br><br>TECHNOLOGY';
+$about_scroll     = $about['scroll_label'] ?? 'SCROLL DOWN';
+
+// Experience (ACF group "Home — Experience"). Fallbacks match the field defaults.
+$experience       = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'experience', $home_id ) ?: array() ) : array();
+$experience_bg    = ( $experience['background'] ?? '' ) ?: 'https://himnoestudio.com/421/wp-content/uploads/2026/09/section_3_bg.webp';
+$experience_title = $experience['title'] ?? 'THE EXPERIENCE';
+$experience_body  = $experience['body_text'] ?? 'SOME EXPERIENCES CATCH YOUR EYE.OURS MOVE THROUGH YOU.';
+$experience_items = array_key_exists( 'items', $experience )
+	? ( is_array( $experience['items'] ) ? array_column( $experience['items'], 'text' ) : array() )
+	: s421_experience_default_items();
+$experience_scroll = $experience['scroll_label'] ?? 'SCROLL DOWN';
+?>
 
 <main id="main">
 
     <!-- ============ INTRO ============ -->
     <section id="intro" class="herospace-wrapper just-center">
-        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_1_bg.webp"
+        <img src="<?php echo esc_url( $intro_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
         <div class="column xl-gap just-center wdth-m">
             <div class="row spcbtwn">
-                <p class="text-m-alt text-medium text-uppers">STEP INSIDE<br>THE EXPERIENCE</p>
-                <p class="text-end">421 creates immersive sound<br>experiences designed to<br>turn listening into<br>something beyond.</p>
-            </div> 
+                <p class="text-m-alt text-medium text-uppers"><?php echo wp_kses( $intro_title, $s421_br ); ?></p>
+                <p class="text-end"><?php echo wp_kses( $intro_body, $s421_br ); ?></p>
+            </div>
             <div class="row spcbtwn items-end">
-                <p class="text-xxs text-uppers">ENTER THE SOUND.</p>
-                <p class="text-xxs text-uppers">WELCOME TO THE INSIDE OF SOUND.</p>
-                <p class="text-m-xnormal text-medium text-end text-uppers">SOMETHING THAT<br>BECOMES<br>PART OF YOU</p>
-            </div> 
+                <p class="text-xxs text-uppers"><?php echo wp_kses( $intro_secondary1, $s421_br ); ?></p>
+                <p class="text-xxs text-uppers"><?php echo wp_kses( $intro_secondary2, $s421_br ); ?></p>
+                <p class="text-m-xnormal text-medium text-end text-uppers"><?php echo wp_kses( $intro_closing, $s421_br ); ?></p>
+            </div>
         </div>
         <div class="row just-center items-centered herospace-bottom">
             <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs text-white">SCROLL DOWN</p>
+                <p class="text-xxs text-white"><?php echo wp_kses( $intro_scroll, $s421_br ); ?></p>
             </div>
         </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
     <section id="about" class="herospace-wrapper just-center">
-        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_2_bg.webp"
+        <img src="<?php echo esc_url( $about_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
         <div class="column pddng-m m-gap just-center">
             <div class="row spcbtwn">
                 <div class="row wdth-s spcbtwn">
-                    <p class="text-xxs text-uppers text-black">Who we are</p>
-                    <p class="text-xxs text-uppers text-black">and</p>
-                    <p class="text-xxs text-uppers text-black">WHAT IS 421?</p>
+                    <p class="text-xxs text-uppers text-black"><?php echo wp_kses( $about_small1, $s421_br ); ?></p>
+                    <p class="text-xxs text-uppers text-black"><?php echo wp_kses( $about_small2, $s421_br ); ?></p>
+                    <p class="text-xxs text-uppers text-black"><?php echo wp_kses( $about_small3, $s421_br ); ?></p>
                 </div>
-                <p class="text-m-alt text-medium text-uppers text-black">SOUND AS A LIVING FORCE.</p>
-                <p class="text-end text-uppers text-black">421 is a sound experience company<br>exploring the relationship between:</p>
-            </div> 
+                <p class="text-m-alt text-medium text-uppers text-black"><?php echo wp_kses( $about_title, $s421_br ); ?></p>
+                <p class="text-end text-uppers text-black"><?php echo wp_kses( $about_body, $s421_br ); ?></p>
+            </div>
             <div class="row spcbtwn items-end">
-                <p class="text-uppers text-black">421 CREATES IMMERSIVE EXPERIENCES<br>WHERE SOUND BECOMES PRESENCE.</p>
-                <p class="text-m-xnormal text-medium text-uppers text-black">IT SHAPES THE SPACE. SHIFTS PERSPECTIVE.</p>
-                <p class="text-m-xnormal text-medium text-end text-uppers text-black">SOUND<br><br>BODY<br><br>SPACE<br><br>PERCEPTION<br><br>TECHNOLOGY</p>
-            </div> 
+                <p class="text-uppers text-black"><?php echo wp_kses( $about_secondary1, $s421_br ); ?></p>
+                <p class="text-m-xnormal text-medium text-uppers text-black"><?php echo wp_kses( $about_secondary2, $s421_br ); ?></p>
+                <p class="text-m-xnormal text-medium text-end text-uppers text-black"><?php echo wp_kses( $about_list, $s421_br ); ?></p>
+            </div>
         </div>
         <div class="row just-center items-centered herospace-bottom">
             <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon black" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs text-black">SCROLL DOWN</p>
+                <p class="text-xxs text-black"><?php echo wp_kses( $about_scroll, $s421_br ); ?></p>
             </div>
         </div>
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
     <section id="experience" class="herospace-wrapper pages just-center">
-        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_3_bg.webp"
+        <img src="<?php echo esc_url( $experience_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
         <div class="column pddng-m pages m-gap just-center">
             <div class="row spcbtwn items-end">
-                <p class="text-xxxl alt text-uppers">THE EXPERIENCE</p>
-                <p class="text-m-xnormal text-uppers text-end">SOME EXPERIENCES CATCH YOUR EYE.OURS MOVE THROUGH YOU.</p>
+                <p class="text-xxxl alt text-uppers"><?php echo wp_kses( $experience_title, $s421_br ); ?></p>
+                <p class="text-m-xnormal text-uppers text-end"><?php echo wp_kses( $experience_body, $s421_br ); ?></p>
             </div>
             <div class="column">
+                <?php foreach ( $experience_items as $i => $item_text ) : ?>
                 <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">01</p>
-                    <p class="text-m-normal text-uppers wdt-s">Sound travels.</p>
+                    <p class="text-m-normal text-uppers"><?php echo esc_html( str_pad( (string) ( $i + 1 ), 2, '0', STR_PAD_LEFT ) ); ?></p>
+                    <p class="text-m-normal text-uppers wdt-s"><?php echo wp_kses( (string) $item_text, $s421_br ); ?></p>
                 </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">02</p>
-                    <p class="text-m-normal text-uppers wdt-s">THROUGH AIR.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">03</p>
-                    <p class="text-m-normal text-uppers wdt-s">THROUGH ARCHITECTURE.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">04</p>
-                    <p class="text-m-normal text-uppers wdt-s">THROUGH YOU.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">05</p>
-                    <p class="text-m-normal text-uppers wdt-s">IT CREATES TENSION.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">06</p>
-                    <p class="text-m-normal text-uppers wdt-s">RELEASE.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">07</p>
-                    <p class="text-m-normal text-uppers wdt-s">TRIGGERS EMOTION.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">08</p>
-                    <p class="text-m-normal text-uppers wdt-s">CHANGES YOUR STATE.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">09</p>
-                    <p class="text-m-normal text-uppers wdt-s">UNTIL LISTENING, BECOMES FEELING.</p>
-                </div>
-                <div class="row spcbtwn border-down">
-                    <p class="text-m-normal text-uppers">10</p>
-                    <p class="text-m-normal text-uppers wdt-s">AND YOU ARE PART OF THE SOUND.</p>
-                </div>
-            </div> 
+                <?php endforeach; ?>
+            </div>
         </div>
         <div class="row just-center items-centered herospace-bottom">
             <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs">SCROLL DOWN</p>
+                <p class="text-xxs"><?php echo wp_kses( $experience_scroll, $s421_br ); ?></p>
             </div>
         </div>
     </section>
