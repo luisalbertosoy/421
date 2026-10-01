@@ -41,7 +41,7 @@
     /* Headline on top, description below aligned to the right */
     #intro .row.spcbtwn:not(.items-end) {
         flex-direction: column;
-        gap: 5rem;
+        gap: 4rem;
     }
 
     #intro .row.spcbtwn:not(.items-end) .text-end {
@@ -52,7 +52,7 @@
     /* Two small tags side by side, closing statement on its own line */
     #intro .row.items-end {
         flex-wrap: wrap;
-        row-gap: 5rem;
+        row-gap: 3rem;
     }
 
     #intro .row.items-end .text-xxs:nth-child(2) {
@@ -424,7 +424,7 @@
 /* Mobile */
 @media (max-width: 480px) {
     #book .column.pddng-m.pages-m {
-        padding: 10rem 1rem 6.5rem;
+        padding: 10rem 1rem 10rem;
         gap: 3.5rem;
     }
 
