@@ -104,7 +104,7 @@
     display: inline-flex;
     align-items: center;
     gap: .25rem;
-    color: black;
+    color: var(--clr-black);
     font-size: 1rem;
     line-height: 1rem;
     font-weight: 400;
