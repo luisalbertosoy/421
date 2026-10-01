@@ -1,0 +1,180 @@
+{
+    "key": "group_s421_footer",
+    "title": "Home — Footer",
+    "fields": [
+        {
+            "aria-label": "",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_s421_footer",
+            "label": "Footer",
+            "name": "footer",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "aria-label": "",
+                    "instructions": "Leave empty to use the default background.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_footer_background",
+                    "label": "Background image",
+                    "name": "background",
+                    "type": "image",
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Centered artwork (SVG or image). Leave empty to use the default \"LET YOUR BODY LISTEN AGAIN.\" artwork.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_footer_main_image",
+                    "label": "Main image",
+                    "name": "main_image",
+                    "type": "image",
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_footer_main_image_alt",
+                    "label": "Main image alt text",
+                    "name": "main_image_alt",
+                    "type": "textarea",
+                    "default_value": "LET YOUR BODY LISTEN AGAIN.",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_footer_secondary_text_one",
+                    "label": "Secondary text one",
+                    "name": "secondary_text_one",
+                    "type": "textarea",
+                    "default_value": "Powered by LPS Spatial HiFi Systems",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_footer_secondary_text_two",
+                    "label": "Secondary text two",
+                    "name": "secondary_text_two",
+                    "type": "textarea",
+                    "default_value": "MEXICO CITY",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Always opens in a new tab. Leave the URL empty to hide it.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_footer_social_link",
+                    "label": "Social link",
+                    "name": "social_link",
+                    "type": "link",
+                    "return_format": "array",
+                    "allow_in_bindings": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "32"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Footer section of the one-page. Read in front-page.php from the page with slug \"home\". The default social link comes from s421_footer_default_social_link().",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1790835620
+}

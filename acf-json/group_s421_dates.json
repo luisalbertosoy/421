@@ -1,0 +1,359 @@
+{
+    "key": "group_s421_dates",
+    "title": "Home — Dates",
+    "fields": [
+        {
+            "aria-label": "",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "key": "field_s421_dates",
+            "label": "Dates",
+            "name": "dates",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "aria-label": "",
+                    "instructions": "Leave empty to use the default background.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_dates_background",
+                    "label": "Background image",
+                    "name": "background",
+                    "type": "image",
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Use &lt;br&gt; for line breaks.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_dates_title_one",
+                    "label": "Title one",
+                    "name": "title_one",
+                    "type": "textarea",
+                    "default_value": "EXPERIENCE.",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "Use &lt;br&gt; for line breaks.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_dates_title_two",
+                    "label": "Title two",
+                    "name": "title_two",
+                    "type": "textarea",
+                    "default_value": "PRECISELY DESIGNED.",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_dates_secondary_text_one",
+                    "label": "Secondary text one",
+                    "name": "secondary_text_one",
+                    "type": "textarea",
+                    "default_value": "We create moments you can enter.",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_dates_secondary_text_two",
+                    "label": "Secondary text two",
+                    "name": "secondary_text_two",
+                    "type": "textarea",
+                    "default_value": "BOOK A JOURNEY",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_dates_events",
+                    "label": "Events",
+                    "name": "events",
+                    "type": "repeater",
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_s421_dates_event_title",
+                    "button_label": "Add event",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "aria-label": "",
+                            "instructions": "Use &lt;br&gt; for line breaks.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "key": "field_s421_dates_event_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "textarea",
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_repeater": "field_s421_dates_events"
+                        },
+                        {
+                            "aria-label": "",
+                            "instructions": "Use &lt;br&gt; for line breaks.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "key": "field_s421_dates_event_description",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": 2,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "parent_repeater": "field_s421_dates_events"
+                        },
+                        {
+                            "aria-label": "",
+                            "instructions": "Desktop shows up to three dates per event in a row.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "key": "field_s421_dates_event_dates",
+                            "label": "Dates",
+                            "name": "dates",
+                            "type": "repeater",
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add date",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "aria-label": "",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "key": "field_s421_dates_event_date",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "type": "text",
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "AGOSTO 25.2026",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_s421_dates_event_dates"
+                                },
+                                {
+                                    "aria-label": "",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "key": "field_s421_dates_event_date_times",
+                                    "label": "Times",
+                                    "name": "times",
+                                    "type": "repeater",
+                                    "layout": "table",
+                                    "pagination": 0,
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add time",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "aria-label": "",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "key": "field_s421_dates_event_date_time",
+                                            "label": "Time",
+                                            "name": "time",
+                                            "type": "text",
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "7PM",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_s421_dates_event_date_times"
+                                        }
+                                    ],
+                                    "parent_repeater": "field_s421_dates_event_dates"
+                                }
+                            ],
+                            "parent_repeater": "field_s421_dates_events"
+                        },
+                        {
+                            "aria-label": "",
+                            "instructions": "Always opens in a new tab. Leave the link text empty to show \"BOOK NOW\".",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "key": "field_s421_dates_event_button",
+                            "label": "Book now button",
+                            "name": "button",
+                            "type": "link",
+                            "return_format": "array",
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_s421_dates_events"
+                        }
+                    ]
+                },
+                {
+                    "aria-label": "",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "key": "field_s421_dates_scroll_label",
+                    "label": "Scroll label",
+                    "name": "scroll_label",
+                    "type": "textarea",
+                    "default_value": "SCROLL DOWN",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 1,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "32"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Dates section (#book) of the one-page. Read in front-page.php from the page with slug \"home\". Default events come from s421_dates_default_events().",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1790835271
+}

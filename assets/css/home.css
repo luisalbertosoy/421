@@ -310,6 +310,11 @@
 
 /* ============ Dates (#book) ============ */
 
+/* The button always sits in the last grid column, even when an event has fewer than three dates */
+#book .row.grid-4-2-2-2-2-2 > .book-btn {
+    grid-column: -2;
+}
+
 /* Small laptops / tablets: six columns get too narrow for the dates.
    Event rows become two lines: title + description, then the three dates + button */
 @media (max-width: 1080px) {

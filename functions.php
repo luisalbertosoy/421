@@ -196,6 +196,113 @@ function s421_experience_items_defaults( $value, $post_id, array $field ) {
 }
 add_filter( 'acf/load_value/key=field_s421_experience_items', 's421_experience_items_defaults', 20, 3 );
 
+/**
+ * Default events for the Dates section, in the same shape get_field() returns.
+ */
+function s421_dates_default_events(): array {
+	$dates = array_fill(
+		0,
+		3,
+		array(
+			'date'  => 'AGOSTO 25.2026',
+			'times' => array(
+				array( 'time' => '7PM' ),
+				array( 'time' => '8:15PM' ),
+				array( 'time' => '9:30PM' ),
+			),
+		)
+	);
+	$button = array(
+		'title'  => 'BOOK NOW',
+		'url'    => '#',
+		'target' => '_blank',
+	);
+
+	return array(
+		array(
+			'title'       => 'Vinyl BootleG AlbuM',
+			'description' => 'white label',
+			'dates'       => $dates,
+			'button'      => $button,
+		),
+		array(
+			'title'       => 'Rarities & oddities',
+			'description' => 'A selection that is not revealed before it plays.',
+			'dates'       => $dates,
+			'button'      => $button,
+		),
+		array(
+			'title'       => 'Rarities & oddities',
+			'description' => 'A selection that is not revealed before it plays.',
+			'dates'       => $dates,
+			'button'      => $button,
+		),
+	);
+}
+
+/**
+ * Prefill the Dates events repeater (with its nested dates/times) until it is saved for the first time.
+ */
+function s421_dates_events_defaults( $value, $post_id, array $field ) {
+	if ( ! empty( $value ) || ! is_numeric( $post_id ) ) {
+		return $value;
+	}
+
+	// The repeater lives inside the "dates" group, so its meta key is "dates_events".
+	if ( metadata_exists( 'post', (int) $post_id, 'dates_events' ) ) {
+		return $value;
+	}
+
+	// Raw repeater values are keyed by field key, not by name.
+	return array_map(
+		static fn( array $event ): array => array(
+			'field_s421_dates_event_title'       => $event['title'],
+			'field_s421_dates_event_description' => $event['description'],
+			'field_s421_dates_event_dates'       => array_map(
+				static fn( array $date ): array => array(
+					'field_s421_dates_event_date'       => $date['date'],
+					'field_s421_dates_event_date_times' => array_map(
+						static fn( array $time ): array => array( 'field_s421_dates_event_date_time' => $time['time'] ),
+						$date['times']
+					),
+				),
+				$event['dates']
+			),
+			'field_s421_dates_event_button'      => $event['button'],
+		),
+		s421_dates_default_events()
+	);
+}
+add_filter( 'acf/load_value/key=field_s421_dates_events', 's421_dates_events_defaults', 20, 3 );
+
+/**
+ * Default social link for the Footer section (ACF link fields have no default value).
+ */
+function s421_footer_default_social_link(): array {
+	return array(
+		'title'  => 'INSTAGRAM',
+		'url'    => 'https://www.instagram.com/',
+		'target' => '_blank',
+	);
+}
+
+/**
+ * Prefill the Footer social link until it is saved for the first time.
+ */
+function s421_footer_social_link_defaults( $value, $post_id, array $field ) {
+	if ( ! empty( $value ) || ! is_numeric( $post_id ) ) {
+		return $value;
+	}
+
+	// The link lives inside the "footer" group, so its meta key is "footer_social_link".
+	if ( metadata_exists( 'post', (int) $post_id, 'footer_social_link' ) ) {
+		return $value;
+	}
+
+	return s421_footer_default_social_link();
+}
+add_filter( 'acf/load_value/key=field_s421_footer_social_link', 's421_footer_social_link_defaults', 20, 3 );
+
 // =========================
 // BODY CLASSES
 // =========================

@@ -40,6 +40,30 @@ $experience_items = array_key_exists( 'items', $experience )
 	? ( is_array( $experience['items'] ) ? array_column( $experience['items'], 'text' ) : array() )
 	: s421_experience_default_items();
 $experience_scroll = $experience['scroll_label'] ?? 'SCROLL DOWN';
+
+// Dates (ACF group "Home — Dates"). Fallbacks match the field defaults.
+$dates            = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'dates', $home_id ) ?: array() ) : array();
+$dates_bg         = ( $dates['background'] ?? '' ) ?: 'https://himnoestudio.com/421/wp-content/uploads/2026/09/section_4_bg.webp';
+$dates_title1     = $dates['title_one'] ?? 'EXPERIENCE.';
+$dates_title2     = $dates['title_two'] ?? 'PRECISELY DESIGNED.';
+$dates_secondary1 = $dates['secondary_text_one'] ?? 'We create moments you can enter.';
+$dates_secondary2 = $dates['secondary_text_two'] ?? 'BOOK A JOURNEY';
+$dates_events     = array_key_exists( 'events', $dates )
+	? ( is_array( $dates['events'] ) ? $dates['events'] : array() )
+	: s421_dates_default_events();
+$dates_scroll     = $dates['scroll_label'] ?? 'SCROLL DOWN';
+
+// Footer (ACF group "Home — Footer"). Fallbacks match the field defaults.
+$footer            = ( $home_id && function_exists( 'get_field' ) ) ? ( get_field( 'footer', $home_id ) ?: array() ) : array();
+$footer_bg         = ( $footer['background'] ?? '' ) ?: 'https://himnoestudio.com/421/wp-content/uploads/2026/09/section_5_bg.webp';
+$footer_image      = ( $footer['main_image'] ?? '' ) ?: 'https://himnoestudio.com/421/wp-content/uploads/2026/09/Footer.svg';
+$footer_image_alt  = $footer['main_image_alt'] ?? 'LET YOUR BODY LISTEN AGAIN.';
+$footer_secondary1 = $footer['secondary_text_one'] ?? 'Powered by LPS Spatial HiFi Systems';
+$footer_secondary2 = $footer['secondary_text_two'] ?? 'MEXICO CITY';
+$footer_social     = array_key_exists( 'social_link', $footer )
+	? ( is_array( $footer['social_link'] ) ? $footer['social_link'] : array() )
+	: s421_footer_default_social_link();
+$footer_social_url = $footer_social['url'] ?? '';
 ?>
 
 <main id="main">
@@ -123,114 +147,69 @@ $experience_scroll = $experience['scroll_label'] ?? 'SCROLL DOWN';
 
     <!-- ============ DATES ============ -->
     <section id="book" class="herospace-wrapper pages just-center">
-        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_4_bg.webp"
+        <img src="<?php echo esc_url( $dates_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
         <div class="column pddng-m pages-m l-gap just-center">
             <div class="column">
                 <div class="row spcbtwn items-end">
-                    <p class="text-xxxl mob text-uppers">EXPERIENCE.</p>
-                    <p class="text-xxxl mob text-uppers text-end">PRECISELY DESIGNED.</p>
+                    <p class="text-xxxl mob text-uppers"><?php echo wp_kses( $dates_title1, $s421_br ); ?></p>
+                    <p class="text-xxxl mob text-uppers text-end"><?php echo wp_kses( $dates_title2, $s421_br ); ?></p>
                 </div>
                 <div class="row spcbtwn items-end">
-                    <p class="text-xxs text-uppers">We create moments you can enter.</p>
-                    <p class="text-xxs text-uppers text-end">BOOK A JOURNEY</p>
+                    <p class="text-xxs text-uppers"><?php echo wp_kses( $dates_secondary1, $s421_br ); ?></p>
+                    <p class="text-xxs text-uppers text-end"><?php echo wp_kses( $dates_secondary2, $s421_br ); ?></p>
                 </div>
             </div>
             <div class="column">
+                <?php foreach ( $dates_events as $event ) :
+                    $event_dates  = is_array( $event['dates'] ?? null ) ? $event['dates'] : array();
+                    $event_button = is_array( $event['button'] ?? null ) ? $event['button'] : array();
+                    $button_url   = $event_button['url'] ?? '';
+                    $button_label = ( $event_button['title'] ?? '' ) ?: 'BOOK NOW';
+                ?>
                 <div class="row grid-4-2-2-2-2-2 border-down alt">
-                    <p class="text-m-normal text-uppers">Vinyl BootleG AlbuM</p>
-                    <p class="text-m-normal text-uppers">white label</p>
+                    <p class="text-m-normal text-uppers"><?php echo wp_kses( $event['title'] ?? '', $s421_br ); ?></p>
+                    <p class="text-m-normal text-uppers"><?php echo wp_kses( $event['description'] ?? '', $s421_br ); ?></p>
+                    <?php foreach ( $event_dates as $event_date ) :
+                        $date_times = is_array( $event_date['times'] ?? null ) ? $event_date['times'] : array();
+                    ?>
                     <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
+                        <p class="text-end pddng-bttm-s text-uppers"><?php echo esc_html( $event_date['date'] ?? '' ); ?></p>
+                        <?php foreach ( $date_times as $date_time ) : ?>
+                        <p class="text-end pddng-rght-m"><?php echo esc_html( $date_time['time'] ?? '' ); ?></p>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <a href="#" class="book-btn text-uppers">BOOK NOW <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
+                    <?php endforeach; ?>
+                    <?php if ( $button_url ) : ?>
+                    <a href="<?php echo esc_url( $button_url ); ?>" class="book-btn text-uppers" target="_blank" rel="noopener"><?php echo esc_html( $button_label ); ?> <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
+                    <?php endif; ?>
                 </div>
-
-                <div class="row grid-4-2-2-2-2-2 border-down alt">
-                    <p class="text-m-normal text-uppers">Rarities & oddities</p>
-                    <p class="text-m-normal text-uppers">A selection that is not revealed before it plays.</p>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <a href="#" class="book-btn text-uppers">BOOK NOW <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
-                </div>
-
-                <div class="row grid-4-2-2-2-2-2 border-down alt">
-                    <p class="text-m-normal text-uppers">Rarities & oddities</p>
-                    <p class="text-m-normal text-uppers">A selection that is not revealed before it plays.</p>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <div class="column no-gap ">
-                        <p class="text-end pddng-bttm-s text-uppers">AGOSTO 25.2026</p>
-                        <p class="text-end pddng-rght-m">7PM</p>
-                        <p class="text-end pddng-rght-m">8:15PM</p>
-                        <p class="text-end pddng-rght-m">9:30PM</p>
-                    </div>
-                    <a href="#" class="book-btn text-uppers">BOOK NOW <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
-                </div>
+                <?php endforeach; ?>
             </div> 
         </div>
         <div class="row just-center items-centered herospace-bottom">
             <div class="column items-centered scroll-next" role="button" tabindex="0" aria-label="<?php esc_attr_e('Scroll to next section', 's421'); ?>">
                 <svg class="icon" width="24" height="24"> <use xlink:href="#arrow-down"></use> </svg>
-                <p class="text-xxs">SCROLL DOWN</p>
+                <p class="text-xxs"><?php echo wp_kses( $dates_scroll, $s421_br ); ?></p>
             </div>
         </div>
     </section>
 
     <!-- ============ FOOTER ============ -->
     <section id="footer" class="herospace-wrapper just-center">
-        <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/section_5_bg.webp"
+        <img src="<?php echo esc_url( $footer_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
         <div class="column xl-gap just-center items-centered wdth-m">
-            <img src="https://himnoestudio.com/421/wp-content/uploads/2026/09/Footer.svg"
-             alt="LET YOUR BODY LISTEN AGAIN."
+            <img src="<?php echo esc_url( $footer_image ); ?>"
+             alt="<?php echo esc_attr( $footer_image_alt ); ?>"
              class="single-img svg">
         </div>
         <div class="row spcbtwn items-centered herospace-bottom pddng-m">
-            <p class="text-xxs text-uppers">Powered by LPS Spatial HiFi Systems</p>
-            <p class="text-xxs text-uppers">MEXICO CITY</p>
-            <a href="https://www.instagram.com/" class="text-xxs text-items-center text-gap-xs text-uppers txt-hover" target="_blank" rel="noopener">INSTAGRAM <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
+            <p class="text-xxs text-uppers"><?php echo wp_kses( $footer_secondary1, $s421_br ); ?></p>
+            <p class="text-xxs text-uppers"><?php echo wp_kses( $footer_secondary2, $s421_br ); ?></p>
+            <?php if ( $footer_social_url ) : ?>
+            <a href="<?php echo esc_url( $footer_social_url ); ?>" class="text-xxs text-items-center text-gap-xs text-uppers txt-hover" target="_blank" rel="noopener"><?php echo esc_html( $footer_social['title'] ?? '' ); ?> <svg class="icon dark" width="24" height="24"> <use xlink:href="#arrow-forward"></use> </svg></a>
+            <?php endif; ?>
         </div>
     </section>
 
