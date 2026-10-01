@@ -93,7 +93,7 @@ $footer_social_url = $footer_social['url'] ?? '';
     <section id="about" class="herospace-wrapper just-center">
         <img src="<?php echo esc_url( $about_bg ); ?>"
              class="h-herospace-img single-img fit-fill">
-        <div class="column pddng-m m-gap just-center">
+        <div class="column pddng-m alt m-gap just-center">
             <div class="row spcbtwn">
                 <div class="row wdth-s spcbtwn">
                     <p class="text-xxs text-uppers text-black"><?php echo wp_kses( $about_small1, $s421_br ); ?></p>

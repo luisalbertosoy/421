@@ -879,6 +879,7 @@
 .column.relative        { position: relative; }
 .column.hght-stretch    { height: stretch; }
 .column.pddng-m         { padding: 3rem; }
+.column.pddng-m.alt     { padding: 3rem; padding-top: 8%; }
 .column.pddng-m.pages   { padding: 12% 3rem; }
 .column.pddng-m.pages-m   { padding: 13% 3rem; }
 .column.no-gap          { gap: 0; }
